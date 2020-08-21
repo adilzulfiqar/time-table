@@ -1,0 +1,55 @@
+.calendar-heading {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.event {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: white;
+  padding: 1.5em 0.75em;
+  cursor: pointer;
+}
+.event-time {
+  color: lightgray;
+}
+.event-value {
+  font-size: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+event-modal-time .weekCalendar__overlay {
+  box-shadow: 0 15px 32px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+}
+.weekCalendar__scaleHeader,
+.weekCalendar__scaleColumn,
+.weekCalendar__headerWrapper,
+.calendarBody__column,
+.calendarBody__cell,
+.weekCalendar__scaleCell,
+.weekCalendar__headerColumn {
+  border-color: lightgrey;
+}
+.dayCell:hover {
+  cursor: default;
+  background-color: white !important;
+  border-color: white !important;
+}
+.weekCalendar__scaleHeader,
+.weekCalendar__headerWrapper {
+  background-color: white;
+  font-weight: lighter;
+}
+
+.weekCalendar,
+.weekCalendar__scaleColumn {
+  padding-top: var(--calendar-header-height);
+}
+
+.weekCalendar__header,
+.weekCalendar__scaleHeader {
+  height: var(--calendar-header-height);
+  line-height: var(--calendar-header-height);
+}
