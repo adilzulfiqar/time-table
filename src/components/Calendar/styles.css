@@ -50,6 +50,23 @@ event-modal-time .weekCalendar__overlay {
 .weekCalendar__headerColumn {
   border-color: lightgrey;
 }
+
+.weekCalendar__scaleCell,
+.weekCalendar__scaleHeader {
+  border: none;
+}
+
+.weekCalendar__scaleHeader {
+  border-right: 1px solid lightgrey;
+}
+
+.weekCalendar__scaleCell span {
+  display: inline-block;
+  /* margin-top: ; */
+  position: relative;
+  top: -30px;
+}
+
 .dayCell:hover {
   cursor: default;
   background-color: white !important;
@@ -57,7 +74,7 @@ event-modal-time .weekCalendar__overlay {
 }
 .weekCalendar__scaleHeader,
 .weekCalendar__headerWrapper {
-  background-color: white;
+  background-color: transparent;
   font-weight: lighter;
 }
 
