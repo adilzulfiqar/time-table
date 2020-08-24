@@ -71,13 +71,33 @@ function Calendar({sampleJSON}) {
   const [events, setEvents] = useState([]);
   const [activeEvent, setActiveEvent] = useState(null);
   const [isRender, setIsRender] = useState(true);
+  const [endPointsForCalendar, setEndPoints] = useState({start: 9, end: 21});
 
   useEffect(() => {
+    let endPoints = {
+      start: 0,
+      end: 0,
+    };
+
     if (sampleJSON?.data?.roomsession.length && isRender) {
       const events = parseEventsData(
         sampleJSON.data.roomsession,
         firstDayOfWeek,
       );
+
+      endPoints.start = events.reduce((min, event) => {
+        const hour = moment(event.start).format('HH');
+
+        return hour < min ? hour : min;
+      }, moment(events[0].start).format('HH'));
+
+      endPoints.end = events.reduce((max, event) => {
+        const hour = moment(event.end).format('HH');
+
+        return max < hour ? hour : max;
+      }, moment(events[0].end).format('HH'));
+
+      endPoints.start && endPoints.end && setEndPoints(endPoints);
       setEvents(events);
       setIsRender(false);
     }
@@ -123,8 +143,8 @@ function Calendar({sampleJSON}) {
           dayFormat="dddd"
           scaleUnit={60}
           eventSpacing={0}
-          startTime={moment({h: 9, m: 0})}
-          endTime={moment({h: 22, m: 0})}
+          startTime={moment({h: endPointsForCalendar.start, m: 0})}
+          endTime={moment({h: Number(endPointsForCalendar.end) + 2, m: 0})}
           useModal={false}
           selectedIntervals={events}
           eventComponent={renderEventComponent}
