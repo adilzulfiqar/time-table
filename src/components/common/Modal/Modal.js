@@ -12,7 +12,6 @@ export default function ReactModal({
   windowSize,
   windowBreakPoint,
 }) {
-  console.log('......event', type, event);
   return (
     <Modal
       visible={isOpen}

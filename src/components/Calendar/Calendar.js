@@ -12,7 +12,7 @@ import {windowBreakPoint, weekDays, userTypes} from './constants';
 import './styles.css';
 
 const renderEventComponent = (event) => {
-  const overMinutesInEvent = moment(event.start).format('mm');
+  // const overMinutesInEvent = moment(event.start).format('mm');
 
   return (
     <div
@@ -20,7 +20,7 @@ const renderEventComponent = (event) => {
       style={{
         background: event.bgColor,
         borderBottom: `4px solid ${LightenDarkenColor(event.bgColor, -50)}`,
-        marginTop: Number(overMinutesInEvent),
+        // marginTop: Number(overMinutesInEvent),
       }}>
       <span className="event-time">
         {moment(event.start).format('HH:mm')} -{' '}
