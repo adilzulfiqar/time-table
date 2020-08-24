@@ -8,7 +8,7 @@ import Modal from '../common/Modal';
 import {useWindowSize} from '../../utils/hooks/useWindowSize';
 import {getRandomColor} from '../../utils/utils';
 import {colors} from '../../temp/sampleJSON';
-import {windowBreakPoint, weekDays, userTypes} from './constants';
+import {windowBreakPoint, weekDays, userTypes, cellHeight} from './constants';
 import './styles.css';
 
 const renderEventComponent = (event) => {
@@ -22,7 +22,7 @@ const renderEventComponent = (event) => {
         background: event.bgColor,
         borderBottom: `4px solid ${LightenDarkenColor(event.bgColor, -50)}`,
         marginTop: Number(overMinutesInEvent),
-        marginBottom: Math.abs(eventCardHeight) * 60,
+        height: Math.abs(eventCardHeight) * cellHeight,
       }}>
       <span className="event-time">
         {moment(event.start).format('HH:mm')} -{' '}
@@ -141,9 +141,9 @@ function Calendar({sampleJSON}) {
         <WeekCalendar
           numberOfDays={7}
           firstDay={firstDayOfWeek}
-          cellHeight={60}
+          cellHeight={cellHeight}
           dayFormat="dddd"
-          scaleUnit={60}
+          scaleUnit={cellHeight}
           eventSpacing={0}
           startTime={moment({h: endPointsForCalendar.start, m: 0})}
           endTime={moment({h: Number(endPointsForCalendar.end) + 2, m: 0})}

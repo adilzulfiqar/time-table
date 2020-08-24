@@ -54,7 +54,7 @@ export const sampleJSONForStudent = {
       },
       {
         name: 'test 2',
-        start_time: '18:09:58',
+        start_time: '18:30:58',
         end_time: '20:13:58',
         day: 4,
         createdAt: '2020-08-19T15:06:01.149721+00:00',
