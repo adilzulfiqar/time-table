@@ -21,7 +21,7 @@
   color: white;
   padding: 1.5em 0.75em;
   cursor: pointer;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 .event-time {
   color: lightgray;

@@ -4,7 +4,7 @@ export const sampleJSONForStudent = {
     roomsession: [
       {
         name: 'test',
-        start_time: '08:03:58',
+        start_time: '08:13:58',
         end_time: '10:03:58',
         day: 3,
         createdAt: '2020-08-19T15:06:01.149721+00:00',
@@ -54,7 +54,7 @@ export const sampleJSONForStudent = {
       },
       {
         name: 'test 2',
-        start_time: '18:03:58',
+        start_time: '18:09:58',
         end_time: '20:13:58',
         day: 4,
         createdAt: '2020-08-19T15:06:01.149721+00:00',
