@@ -1,0 +1,43 @@
+.mobile-view-calendar-container {
+  padding: 0 30px;
+}
+
+.mobile-view-day-section {
+  margin-top: 20px;
+}
+
+.mobile-view-events-container {
+  height: 150px;
+  margin-top: 20px;
+  overflow-x: scroll;
+  display: flex;
+}
+
+.mobile-view-event {
+  flex-shrink: 0;
+  height: 150px;
+  width: 300px;
+  padding: 20px;
+  cursor: pointer;
+  margin-left: 20px;
+  box-sizing: border-box;
+}
+
+.mobile-view-event-time {
+  color: lightgray;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.mobile-view-event-value {
+  font-size: 20px;
+  color: white;
+  display: inline-block;
+}
+
+.no-events {
+}
+
+.mobile-view-event:nth-of-type(1) {
+  margin-left: 0px;
+}
