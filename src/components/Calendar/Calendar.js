@@ -12,8 +12,8 @@ import {windowBreakPoint, weekDays, userTypes, cellHeight} from './constants';
 import './styles.css';
 
 const renderEventComponent = (event) => {
-  const overMinutesInEvent = moment(event.start).format('mm');
-  const eventCardHeight = moment(event.start).diff(event.end, 'm');
+  const overMinutesInEvent = (moment(event.start).format('mm') * 90) / 60;
+  const eventCardHeight = (moment(event.start).diff(event.end, 'm') * 90) / 60;
 
   return (
     <div
@@ -143,7 +143,7 @@ function Calendar({sampleJSON}) {
           firstDay={firstDayOfWeek}
           cellHeight={cellHeight}
           dayFormat="dddd"
-          scaleUnit={cellHeight}
+          scaleUnit={60}
           eventSpacing={0}
           startTime={moment({h: endPointsForCalendar.start, m: 0})}
           endTime={moment({h: Number(endPointsForCalendar.end) + 2, m: 0})}

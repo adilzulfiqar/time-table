@@ -62,9 +62,8 @@ event-modal-time .weekCalendar__overlay {
 
 .weekCalendar__scaleCell span {
   display: inline-block;
-  /* margin-top: ; */
   position: relative;
-  top: -30px;
+  top: -45px;
 }
 
 .dayCell:hover {
