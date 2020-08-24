@@ -27,7 +27,7 @@ export default function MobileCalendar({
 
     data?.data?.roomsession?.length &&
       data.data.roomsession.forEach((event) => {
-        const day = weekDays[event.day - 1];
+        const day = weekDays[event.day];
         parsedEvents = {
           ...parsedEvents,
           [day]: [...parsedEvents[day], event],

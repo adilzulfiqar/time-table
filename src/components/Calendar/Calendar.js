@@ -36,10 +36,10 @@ const renderEventComponent = (event) => {
 
 export const parseEvent = (event, firstDayOfWeek) => {
   let startDate = moment(firstDayOfWeek)
-    .add(event.day - 1, 'day')
+    .add(event.day, 'day')
     .format('YYYY-MM-DD');
   let start_time = moment(firstDayOfWeek)
-    .add(event.day - 1, 'day')
+    .add(event.day, 'day')
     .format('YYYY-MM-DD');
 
   const start = moment(`${startDate} ${event.start_time}`);
@@ -53,7 +53,7 @@ export const parseEvent = (event, firstDayOfWeek) => {
     classroomName: event.classroom_teacher_matter.classroom.name,
     bgColor: getRandomColor(colors),
     schoolYear: event.school_year.name,
-    day: weekDays[event.day - 1],
+    day: weekDays[event.day],
     teacherName: `${event.classroom_teacher_matter.teacher.user.first_name} ${event.classroom_teacher_matter.teacher.user.last_name}`,
   };
 };
