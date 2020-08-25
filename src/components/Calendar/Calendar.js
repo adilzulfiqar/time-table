@@ -81,7 +81,13 @@ function Calendar({sampleJSON}) {
       end: 0,
     };
 
-    if (sampleJSON?.data?.roomsession.length && isRender) {
+    if (
+      sampleJSON &&
+      sampleJSON.data &&
+      sampleJSON.data.roomsession &&
+      sampleJSON.data.roomsession.length &&
+      isRender
+    ) {
       const events = parseEventsData(
         sampleJSON.data.roomsession,
         firstDayOfWeek,
@@ -123,21 +129,29 @@ function Calendar({sampleJSON}) {
           onClose={handleOpenCloseModal}
           windowBreakPoint={windowBreakPoint}
           event={activeEvent}
-          type={sampleJSON?.data?.type}
+          type={sampleJSON && sampleJSON.data && sampleJSON.data.type}
         />
       )}
       <h1 className="calendar-heading">Time Table</h1>
       <div className="title-bar">
         <h1>
-          {sampleJSON?.data?.type === userTypes.student
-            ? sampleJSON?.data?.roomsession[0].classroom_teacher_matter
-                .classroom.name
-            : sampleJSON?.data?.type === userTypes.teacher &&
-              `${sampleJSON?.data?.roomsession[0].classroom_teacher_matter.teacher.user.first_name} ${sampleJSON?.data?.roomsession[0].classroom_teacher_matter.teacher.user.last_name}`}
+          {sampleJSON &&
+          sampleJSON.data &&
+          sampleJSON.data.type === userTypes.student
+            ? sampleJSON.data.roomsession[0].classroom_teacher_matter.classroom
+                .name
+            : sampleJSON &&
+              sampleJSON.data &&
+              sampleJSON.data.type === userTypes.teacher &&
+              `${sampleJSON.data.roomsession[0].classroom_teacher_matter.teacher.user.first_name} ${sampleJSON.data.roomsession[0].classroom_teacher_matter.teacher.user.last_name}`}
         </h1>
-        <h1>{sampleJSON?.data?.roomsession[0].school_year.name}</h1>
+        <h1>
+          {sampleJSON &&
+            sampleJSON.data &&
+            sampleJSON.data.roomsession[0].school_year.name}
+        </h1>
       </div>
-      {windowSize?.width > windowBreakPoint ? (
+      {windowSize.width > windowBreakPoint ? (
         <WeekCalendar
           numberOfDays={7}
           firstDay={firstDayOfWeek}

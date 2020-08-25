@@ -25,7 +25,9 @@ export default function MobileCalendar({
       Sunday: [],
     };
 
-    data?.data?.roomsession?.length &&
+    data &&
+      data.data &&
+      data.data.roomsession.length &&
       data.data.roomsession.forEach((event) => {
         const day = weekDays[event.day];
         parsedEvents = {
