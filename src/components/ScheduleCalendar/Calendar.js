@@ -4,7 +4,7 @@ import WeekCalendar from 'react-week-calendar';
 import {LightenDarkenColor} from 'lighten-darken-color';
 import 'react-week-calendar/dist/style.css';
 import MobileCalendar from './MobileCalendar';
-import Modal from '../common/Modal';
+import Modal from '../common/Modals/ScheduleModal';
 import {useWindowSize} from '../../utils/hooks/useWindowSize';
 import {getRandomColor} from '../../utils/utils';
 import {colors} from '../../temp/sampleJSON';

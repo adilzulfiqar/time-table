@@ -12,6 +12,7 @@
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-animated-modal": "^1.1.1",
+    "react-big-calendar": "^0.27.0",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
     "react-week-calendar": "^0.1.3"

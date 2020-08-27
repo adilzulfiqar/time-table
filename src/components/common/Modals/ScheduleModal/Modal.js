@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import Modal from 'react-animated-modal';
-import {userTypes} from '../../Calendar/constants';
+import {userTypes} from '../../../ScheduleCalendar/constants';
 import './styles.css';
 
 export default function ReactModal({

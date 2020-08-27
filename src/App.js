@@ -1,9 +1,16 @@
 import React from 'react';
-import Calendar from './components/Calendar';
+import ScheduleCalendar from './components/ScheduleCalendar';
+import EventCalendar from './components/EventCalendar';
 import './App.css';
 
 import {sampleJSONForStudent, sampleJSONForTeacher} from './temp/sampleJSON';
+import {eventsSample} from './temp/events';
 
 export default function App() {
-  return <Calendar sampleJSON={sampleJSONForStudent} />;
+  return (
+    <>
+      <EventCalendar eventList={eventsSample} />
+      {/* <ScheduleCalendar sampleJSON={sampleJSONForStudent} />; */}
+    </>
+  );
 }
