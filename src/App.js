@@ -9,8 +9,8 @@ import {eventsSample} from './temp/events';
 export default function App() {
   return (
     <>
-      <EventCalendar eventList={eventsSample} />
-      {/* <ScheduleCalendar sampleJSON={sampleJSONForStudent} />; */}
+      {/* <EventCalendar eventList={eventsSample} /> */}
+      <ScheduleCalendar sampleJSON={sampleJSONForStudent} />;
     </>
   );
 }
